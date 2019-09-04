@@ -185,6 +185,7 @@ func (b *Backend) publishCommand(fields log.Fields, gatewayID lorawan.EUI64, com
 	fields["gateway_id"] = gatewayID
 	fields["command"] = command
 	fields["qos"] = b.qos
+	fields["topic"] = topic.String()
 
 	log.WithFields(fields).Info("gateway/mqtt: publishing gateway command")
 
